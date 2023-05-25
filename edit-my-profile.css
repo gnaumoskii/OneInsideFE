@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    font-family: 'Eczar', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.user-container {
+    border: 1px solid darkslategray;
+    width: 300px;
+    height: 500px;
+
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    animation: end-rotation 0.5s ease-out;
+}
+
+.user-icon__container {
+    width: 128px;
+    height: 128px;
+    border: 1px solid darkslategray;
+    border-radius: 6px;
+    margin-top: 24px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    animation: end-rotation 0.5s ease-out;
+}
+
+.user-container-animate {
+    animation: start-rotation 0.5s ease-out;
+}
+
+.user-icon {
+    height: 90%;
+}
+
+.user-edit {
+    width: 60px;
+    align-self: end;
+}
+
+.user-input {
+    width: 100%;
+    height: 200px;
+    margin-top: 60px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.office-location__container {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    height: 40px;
+}
+
+input {
+    font-family: 'Eczar', serif;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 80%;
+    border: 1px solid darkslategray;
+    height: 40px;
+    padding: 4px;
+    margin-bottom: 18px;
+    border-radius: 6px;;
+}
+
+.user-input__office-location {
+    width: 100%;
+    height: 100%;
+}
+
+.location-icon {
+    width: 60px;
+}
+
+.buttons {
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button {
+    font-family: 'Eczar', serif;
+    background-color: white;
+    font-size:1rem;
+    padding: 4px;
+    width: 96px;
+    border-radius: 12px;
+    border: 2px solid darkslategray;
+    cursor: pointer;
+    transition: border 0.2s ease-out;
+}
+
+.buttons button:hover {
+    border: 2px solid gray;
+}
+
+@keyframes end-rotation {
+    from {
+        transform: rotateY(90deg);
+    }
+
+    to {
+        transform: rotateY(0);
+    }
+}
+@keyframes start-rotation {
+    from {
+        transform: rotateY(0);
+    }
+
+    to {
+        transform: rotateY(-90deg);
+    }
+}
