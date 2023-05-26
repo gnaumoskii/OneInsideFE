@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -17,39 +17,43 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    
+    background: linear-gradient(#519088, #406e68)
 }
 
 .user-container {
-    border: 1px solid darkslategray;
-    width: 300px;
-    height: 500px;
-
+    border: 1px solid black;
+    width: 280px;
+    height: 480px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     padding: 12px;
     animation: end-rotation 0.5s ease-out;
-}
-
-.user-icon__container {
-    width: 128px;
-    height: 128px;
-    border: 1px solid darkslategray;
-    border-radius: 6px;
-    margin-top: 24px;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    animation: end-rotation 0.5s ease-out;
+    box-shadow: 2px 2px 4px 2px #00000074;
+    background-color: white;
 }
 
 .user-container-animate {
     animation: start-rotation 0.5s ease-out;
 }
 
+.user-icon__container {
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    margin-top: 24px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: white;
+}
+
 .user-icon {
+    position: relative;
+    top: 4px;
     height: 90%;
 }
 
@@ -59,64 +63,121 @@ body {
 }
 
 .user-input {
-    width: 100%;
-    height: 200px;
-    margin-top: 60px;
+    position: relative;
+    border-top: 1px solid lightgray;
+    width: 75%;
+    margin-top: 32px;
     align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 12px;
+    height: 50%;
 }
 
-.office-location__container {
-    width: 80%;
-    display: flex;
-    justify-content: end;
-    height: 40px;
+.user-input__first-name::placeholder,
+.user-input__last-name::placeholder,
+.user-input__office-location::placeholder {
+    color: lightgray;
+    font-size: 0.8rem;
+    text-align: start;
 }
 
-input {
-    font-family: 'Eczar', serif;
-    font-size: 0.9rem;
-    text-align: center;
-    width: 80%;
-    border: 1px solid darkslategray;
-    height: 40px;
-    padding: 4px;
-    margin-bottom: 18px;
-    border-radius: 6px;;
-}
-
+.user-input__first-name,
+.user-input__last-name,
 .user-input__office-location {
+    font-family: 'Eczar', serif;
+    padding: 8px;
+    width: 80%;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+    border-radius: 6px;;
     width: 100%;
-    height: 100%;
+    height: 28px;
+    transition: 0.2s ease-out;
+    color: #406e68;
+}
+
+.user-input__first-name:focus,
+.user-input__last-name:focus,
+.user-input__office-location:focus {
+    outline: none !important;
+    border: 1px solid #519088;
 }
 
 .location-icon {
-    width: 60px;
+    position: absolute;
+    left: 0px;
+    top: 140px;
+    padding: 0;
+    margin: 0;
+    width: 14px;
 }
 
 .buttons {
-    margin-top: 48px;
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-top: 12px;
 }
 
 .buttons button {
     font-family: 'Eczar', serif;
     background-color: white;
-    font-size:1rem;
+    font-size:0.9rem;
     padding: 4px;
-    width: 96px;
-    border-radius: 12px;
-    border: 2px solid darkslategray;
+    font-weight: light;
+    width: 72px;
+    border-radius: 6px;
+    border: 1px solid #519088;
     cursor: pointer;
     transition: border 0.2s ease-out;
+    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1)
 }
 
-.buttons button:hover {
-    border: 2px solid gray;
+.buttons .button-save {
+    background-color: #519088;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+.buttons .button-cancel {
+    background: linear-gradient(90deg, #519088 50%, white 50%);
+    background-size: 150px;
+    background-position-x: 100%;
+    text-transform: uppercase;
+    color: #519088;
+    
+}
+
+.buttons .button-save:hover {
+    background-color: #406e68;
+    border: 1px solid #406e68;
+    color: white;
+    text-transform: uppercase; 
+}
+
+.buttons .button-cancel:hover {
+    background-position-x: 0%;
+    color: white;
+}
+
+
+
+.user-input__label {
+    position: relative;
+    color: #519088;
+    font-size: 0.75rem;
+    top: 2px;
+    left: 2px;
+    width: 100%;
+    text-align: start;
+}
+
+.user-input__label:last-of-type {
+    left: 14px;
+
 }
 
 @keyframes end-rotation {
